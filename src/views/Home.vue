@@ -41,7 +41,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from "vue";
-import Alert from '@/components/Alert.vue'
+import Alert from '@/components/Alert.vue';
 
 const showAlert = ref(false)
 const alertMode = ref('warning')
