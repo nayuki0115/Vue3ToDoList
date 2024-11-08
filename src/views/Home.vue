@@ -109,11 +109,13 @@ const handleChangeType = (type: 'notComplete'|'complete') => {
   let { commonItems, uniqueItems } = getIdDifferences(selectCompleteItems.value, selectedItems.value);
   let uniqueIds: number[] = uniqueItems.map((item: {id: number}) => item.id)
   if(type === 'complete') {
-    // 重複的不加入
-    selectComplete.value.push(...uniqueIds)
+     // 直接將選中項目的 id 加入完成列表
+    selectComplete.value = [...new Set([...selectComplete.value, ...selectedValues.value])]
   }else if(type === 'notComplete') {
-    selectComplete.value = uniqueIds
+    /// 從完成列表中移除選中的項目
+    selectComplete.value = selectComplete.value.filter(id => !selectedValues.value.includes(id))
   }
+  // 清空選中項目
   selectedValues.value = []
 }
 
