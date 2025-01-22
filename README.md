@@ -1,5 +1,7 @@
 # Vue3ToDoList
 
+![image](https://img.shields.io/badge/node-v20.11.1-green.svg) 
+
 使用 Vue3 製作的 Vue3ToDoList
 
 # 操作說明
